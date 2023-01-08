@@ -18,12 +18,17 @@ Once registered, the user can create teams and add members (registered users) to
     * id (primary key)
     * name (required)
     * description
+    * leader (user_id)
+* Member
+    * id (primary key)
+    * user_id
+    * team_id
+    * tasks
 * Task
     * id (primary key)
     * title (required)
-    * status
-    * team_id
-    * assignee_id
+    * isDone
+    * member_id
 
 ## Development
 
@@ -32,11 +37,15 @@ Once registered, the user can create teams and add members (registered users) to
 * [Node JS](https://nodejs.org/en/)
 * [Express JS](https://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/)
 * [Jest](https://jestjs.io/)
 
 ## External links
 
 * [Writing API Tests with Jest](https://www.rithmschool.com/courses/intermediate-node-express/api-tests-with-jest);
+* [How to Create Relationships with Mongoose and Node.JS](https://dev.to/oluseyeo/how-to-create-relationships-with-mongoose-and-node-js-11c8)
+
+* [Mongoose Crash Course - Beginner Through Advanced](https://www.youtube.com/watch?v=DZBGEVgL2eE)
 
 ## Troubleshooting
 
