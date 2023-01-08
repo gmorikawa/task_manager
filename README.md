@@ -33,3 +33,13 @@ Once registered, the user can create teams and add members (registered users) to
 * [Express JS](https://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
 * [Jest](https://jestjs.io/)
+
+## External links
+
+* [Writing API Tests with Jest](https://www.rithmschool.com/courses/intermediate-node-express/api-tests-with-jest);
+
+## Troubleshooting
+
+### 'npm install' taking too much time to install packages
+For some reason __npm install__ was longer than normal to install the packages, sometimes coming to fail during installation.
+Why exactly I had this trouble I still don't know, but downgrading Node from version 18 to version 16 solved the problem.
