@@ -13,8 +13,7 @@ const schema = new mongoose.Schema({
     },
     tasks: [{
         type: mongoose.SchemaTypes.ObjectId,
-        ref: 'Task',
-        required: true
+        ref: 'Task'
     }]
 });
 
