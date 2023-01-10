@@ -8,6 +8,10 @@ const schema = new mongoose.Schema({
     isDone: {
         type: Boolean,
         default: false
+    },
+    member: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Member'
     }
 });
 
