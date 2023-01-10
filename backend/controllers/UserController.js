@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const UserService = require('../services/UserService');
+const auth = require('../middleware/Authentication');
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     UserService.get()
         .then((users) => {
             res.json(users);
@@ -17,7 +18,7 @@ router.post('/', (req, res) => {
         .catch((err) => res.json(err));
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
     const modifiedUser = req.body;
     const id = req.params.id;
 
@@ -27,7 +28,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete route should not exist
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     const id = req.params.id;
     UserService.delete(id)
         .then(() => { res.json({ success: true }); })

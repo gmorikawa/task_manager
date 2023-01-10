@@ -17,7 +17,7 @@ const service = {
             username: username
         };
     
-        const user = await UserModel.find(filter);
+        const user = await UserModel.findOne(filter);
         return user;
     },
     insert: async (newUser) => {

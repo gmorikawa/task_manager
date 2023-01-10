@@ -1,10 +1,22 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const sessions = require('express-session');
 const config = require('./.config.json');
 
 // middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(require('body-parser').json());
+app.use(require('cookie-parser')());
+
+// sessions
+app.use(sessions({
+    secret: "ultrasecretkey",
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    resave: false
+}));
 
 // database configuration
 mongoose.connect(config.database.connection);
