@@ -32,6 +32,7 @@ db.on('error', err => {
 // define routes
 app.use('/', require('./controllers/AuthenticationController'));
 app.use('/user', require('./controllers/UserController'));
+app.use('/team', require('./controllers/TeamController'));
 
 // start the application
 app.listen(config.server.port, () => {
