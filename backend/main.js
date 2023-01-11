@@ -33,6 +33,8 @@ db.on('error', err => {
 app.use('/', require('./controllers/AuthenticationController'));
 app.use('/user', require('./controllers/UserController'));
 app.use('/team', require('./controllers/TeamController'));
+app.use('/member', require('./controllers/MemberController'));
+app.use('/task', require('./controllers/TaskController'));
 
 // start the application
 app.listen(config.server.port, () => {

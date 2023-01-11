@@ -5,6 +5,7 @@ const auth = require('../middleware/Authentication');
 
 router.get('/', auth, (req, res) => {
     const user_id = session.userid;
+    
     TeamService.getByUser(user_id)
         .then((teams) => {
             res.json(teams);

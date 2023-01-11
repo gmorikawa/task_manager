@@ -23,7 +23,6 @@ Once registered, the user can create teams and add members (registered users) to
     * id (primary key)
     * user_id
     * team_id
-    * tasks
 * Task
     * id (primary key)
     * title (required)
@@ -51,4 +50,13 @@ Once registered, the user can create teams and add members (registered users) to
 
 ### 'npm install' taking too much time to install packages
 For some reason __npm install__ was longer than normal to install the packages, sometimes coming to fail during installation.
+
 Why exactly I had this trouble I still don't know, but downgrading Node from version 18 to version 16 solved the problem.
+
+### Database connection problems
+When using Windows environment I had problems at connecting to localhost because apparently because localhost is not permitted on the IPv6 address ::1, which per default mongoose uses.
+
+To solve this problem, instead of using _localhost_ it was necessary to use _127.0.0.1_ to explicit set the IPv4.
+
+References:
+* [Stack Overflow](https://stackoverflow.com/questions/69840504/mongooseserverselectionerror-connect-econnrefused-127017)

@@ -20,7 +20,7 @@ const service = {
         return teams;
     },
     insert: async (newUser) => {
-        await TeamModel.create(newUser, null);
+        await TeamModel.create(newUser);
         return true;
     },
     update: async (id, modifiedTeam) => {

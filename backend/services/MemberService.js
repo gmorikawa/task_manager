@@ -30,7 +30,7 @@ const service = {
         return member;
     },
     insert: async (newMember) => {
-        await MemberModel.create(newMember, null);
+        await MemberModel.create(newMember);
         return true;
     },
     update: async (id, modifiedMember) => {

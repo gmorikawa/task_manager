@@ -3,6 +3,7 @@ const router = express.Router();
 const UserService = require('../services/UserService');
 const auth = require('../middleware/Authentication');
 
+// this should be deleted
 router.get('/', auth, (req, res) => {
     UserService.get()
         .then((users) => {
